@@ -1,0 +1,39 @@
+install.packages("devtools")
+library("devtools")
+devtools::install_github("klutometis/roxygen")
+library(roxygen2)
+
+create("statement")
+
+Statment_function <- function(true=TRUE) {
+  if (true==TRUE) {
+    print("I have learned lots in this class!")
+  }
+  else {
+    print("I did not learn anything in this class!")
+  }
+} 
+
+# Class
+#
+# This funcation tell you how class was 
+# @param true What did you learn in class? Defaults to TRUE.
+# @keywords class
+# @export 
+# @examples
+# Statement_function()
+
+Statment_function <- function(true=TRUE) {
+  if (true==TRUE) {
+    print("I have learned lots in this class!")
+  }
+  else {
+    print("I did not learn anything in this class!")
+  }
+}
+
+setwd("./statement")
+document()
+
+setwd("..")
+install("statement")
